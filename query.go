@@ -1,21 +1,25 @@
 package apiaigo
 
+// Context object
 type Context struct {
 	Lifespan   int               `json:"lifespan"`
 	Name       string            `json:"name"`
 	Parameters map[string]string `json:"parameters"`
 }
 
+// Location takes latitude and longitude
 type Location struct {
 	Latitude  float64 `json:"latitude"`
 	Longitude float64 `json:"longitude"`
 }
 
+// Event can be used instead of query text
 type Event struct {
 	Name string `json:"name"`
 	Data string `json:"data"`
 }
 
+// Entity wrapper of API.ai entities
 type Entity struct {
 	Count   int    `json:"count"`
 	ID      string `json:"id"`
@@ -23,12 +27,13 @@ type Entity struct {
 	Preview string `json:"preview"`
 }
 
+// OrigReq ...
 type OrigReq struct {
 	Source string            `json:"source"`
 	Data   map[string]string `json:"data"`
 }
 
-// QueryStruct wraps API.ai query. To know about all the paramters: https://docs.api.ai/docs/query#query-parameters-and-json-fields
+// QueryStruct wraps API.ai query. To know about all the parameters: https://docs.api.ai/docs/query#query-parameters-and-json-fields
 type QueryStruct struct {
 	Contexts        []Context `json:"contexts"`
 	Language        string    `json:"lang"`
