@@ -42,11 +42,16 @@ func (api APIAI) TTS(text string, filepath string) {
 	req.Header.Add("Authorization", "Bearer "+api.AuthToken)
 	req.Header.Add("Accept-Language", "en-US")
 	client := http.Client{}
+	log.Println(req.URL)
+	q := req.URL.Query()
+	q.Add("text", text)
+	req.URL.RawQuery = q.Encode()
 	resp, err := client.Do(req)
 	checkError(err)
 	defer resp.Body.Close()
-	file, err := os.Open(filepath)
+	file, err := os.Create(filepath)
 	checkError(err)
+	defer file.Close()
 	io.Copy(file, resp.Body)
 }
 
