@@ -18,7 +18,7 @@ Create an API.ai instance
 ### To send a text query
 
 ```
-	resp := ai.SendText("make me a sandwich")
+	resp, err := ai.SendText("make me a sandwich")
 ```
 
 `resp` is a `ResponseStruct` instance. It is defined in response.go.
@@ -26,7 +26,7 @@ Create an API.ai instance
 ### For text to speech
 ```
 	// filepath to save the wav file
-	ai.TTS(<text>, <filepath>)
+	err := ai.TTS("sudo make me a sandwich", <filepath>)
 
 ```
 
