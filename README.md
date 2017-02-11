@@ -2,6 +2,13 @@
 
 A simple wrapper over API.ai HTTP API. 
 
+## To get this package
+
+```
+go get github.com/kamalpy/apiai-go
+```
+
+
 ## Usage
 
 Create an API.ai instance
@@ -33,8 +40,3 @@ Create an API.ai instance
 ### Custom Query
 
 You can also create your own `QueryStruct` instance and pass it directly to `ai.Response()`.
-To get this package
-
-```
-go get github.com/kamalpy/apiai-go
-```
