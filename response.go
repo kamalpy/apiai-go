@@ -36,6 +36,7 @@ type Result struct {
 	Source           string            `json:"source"`
 }
 
+// ResponseStruct wraps the response from API.ai. Please see. https://docs.api.ai/docs/query#response
 type ResponseStruct struct {
 	ID        string `json:"id"`
 	Language  string `json:"lang"`

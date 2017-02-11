@@ -11,6 +11,7 @@ import (
 	"os"
 )
 
+// APIAI Base APIAI struct. All fields are required.
 type APIAI struct {
 	Version   string
 	Language  string
@@ -26,6 +27,7 @@ func checkError(err error) {
 	}
 }
 
+// SendText is useful to send a simple query to API.ai
 func (api APIAI) SendText(text string) ResponseStruct {
 	query := QueryStruct{
 		Query:     text,
@@ -36,6 +38,7 @@ func (api APIAI) SendText(text string) ResponseStruct {
 	return response
 }
 
+// TTS sends query to API.ai and saves the speech response to specified filepath in wav format
 func (api APIAI) TTS(text string, filepath string) {
 	req, err := http.NewRequest("GET", fmt.Sprintf(apiEndpoint, "tts", api.Version), nil)
 	checkError(err)

@@ -28,6 +28,7 @@ type OrigReq struct {
 	Data   map[string]string `json:"data"`
 }
 
+// QueryStruct wraps API.ai query. To know about all the paramters: https://docs.api.ai/docs/query#query-parameters-and-json-fields
 type QueryStruct struct {
 	Contexts        []Context `json:"contexts"`
 	Language        string    `json:"lang"`
