@@ -67,7 +67,7 @@ func Response(query QueryStruct, api APIAI) (ResponseStruct, error) {
 	if err != nil {
 		return ResponseStruct{}, err
 	}
-	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("Content-Type", "application/json; charset=utf-8")
 	req.Header.Set("Authorization", "Bearer "+api.AuthToken)
 	client := &http.Client{}
 	resp, err := client.Do(req)
